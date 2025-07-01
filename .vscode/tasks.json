@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Lettuce.Collections.BiDirectionalDictionary.sln"
+                "${workspaceFolder}/Lettuce.Collections.sln"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -17,7 +17,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Lettuce.Collections.BiDirectionalDictionary/Lettuce.Collections.BiDirectionalDictionary.csproj"
+                "${workspaceFolder}/Lettuce.Collections/Lettuce.Collections.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

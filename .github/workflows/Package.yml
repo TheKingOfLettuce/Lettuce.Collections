@@ -16,14 +16,14 @@ jobs:
       dotnet-version: 9.0.x
       configuration: Release
       upload-artifact: true
-      artifact-name: Lettuce.Collections.BiDirectionalDictionary_${{ github.ref_name }}
-      bin-dir: Lettuce.Collections.BiDirectionalDictionary
-      project-path: Lettuce.Collections.BiDirectionalDictionary/Lettuce.Collections.BiDirectionalDictionary.csproj
+      artifact-name: Lettuce.Collections_${{ github.ref_name }}
+      bin-dir: Lettuce.Collections
+      project-path: Lettuce.Collections/Lettuce.Collections.csproj
   deploy-package-github:
     uses: TheKingOfLettuce/LettuceGithubWorkflows/.github/workflows/Upload-Nuget-dotnet.yml@main
     needs: create-package-artifact
     with:
-      artifact-name: Lettuce.Collections.BiDirectionalDictionary_${{ github.ref_name }}
+      artifact-name: Lettuce.Collections_${{ github.ref_name }}
       artifact-id: ${{ needs.create-package-artifact.outputs.artifact-id }}
       nuget-source: https://nuget.pkg.github.com/TheKingOfLettuce/index.json
     secrets:
@@ -32,7 +32,7 @@ jobs:
     uses: TheKingOfLettuce/LettuceGithubWorkflows/.github/workflows/Upload-Nuget-dotnet.yml@main
     needs: create-package-artifact
     with:
-      artifact-name: Lettuce.Collections.BiDirectionalDictionary_${{ github.ref_name }}
+      artifact-name: Lettuce.Collections_${{ github.ref_name }}
       artifact-id: ${{ needs.create-package-artifact.outputs.artifact-id }}
       nuget-source: https://nuget.org
     secrets:
