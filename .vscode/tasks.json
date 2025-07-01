@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "BuildSolution",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Lettuce.Collections.BiDirectionalDictionary.sln"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build Main",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Lettuce.Collections.BiDirectionalDictionary/Lettuce.Collections.BiDirectionalDictionary.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
