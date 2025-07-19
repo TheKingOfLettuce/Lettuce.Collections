@@ -16,3 +16,22 @@ nickNames.Add("Tommy", "Tom");
 nickNames.GetValue("Cameron"); // returns "Cam"
 nickNames.GetKey("Cam"); // returns "Cameron"
 ```
+
+## ProbabilityTable
+
+A collection of items that have associated weights, allowing for random item selection to be selected more or less often than others.
+
+### Examples
+
+```csharp
+ProbabilityTable<string> names = new ProbabilityTable<string>();
+names.AddItem("Common", 10);
+names.AddItem("Uncommon", 1);
+names.AddItem("Rare", .1);
+names.AddItem("Really Rare", .01);
+
+names.GetRandomItem();
+// for deterministic selections, or if you have your own RNG implementation that produces RANDOM_FLOAT (0.0 - 1.0)
+float weightRoll = RANDOM_FLOAT * names.TotalWeight;
+names.GetRandomItem(weightRoll);
+```
